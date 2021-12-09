@@ -59,12 +59,12 @@ class Floating_Cart_For_Woocommerce_Admin {
 	/**
 	 * Add settings.
 	 *
+	 * @since 1.0.0
 	 * @param array  $settings Existing settings.
 	 * @param string $current_section Current ID of the section.
 	 * @return array $settings Modified settings.
 	 */
 	public function add_settings( $settings, $current_section = '' ) {
-
 		if ( $current_section === $this->id ) {
 			$settings = apply_filters(
 				'floating_cart_for_woocommerce_settings',
@@ -86,8 +86,8 @@ class Floating_Cart_For_Woocommerce_Admin {
 
 					array(
 						'title'   => __( 'Autohide Duration', 'floating-cart-for-woocommerce' ),
-						'desc'    => __( 'Enter how many seconds you want before the cart will autohide.  Enter 0 to disable which will always show.', 'floating-cart-for-woocommerce' ),
-						'id'      => $this->id . '_autohide',
+						'desc'    => __( 'Enter how many seconds you want before the cart will autohide. Enter 0 to disable which will always show.', 'floating-cart-for-woocommerce' ),
+						'id'      => $this->id . '_autohide_duration',
 						'default' => '6',
 						'type'    => 'text',
 					),

@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Floating_Cart_For_Woocommerce' ) ) :
 	define( 'FLOATING_CART_FOR_WOOCOMMERCE_VERSION', '1.0.0' );
 	define( 'FLOATING_CART_FOR_WOOCOMMERCE_ABSPATH', dirname( __FILE__ ) . '/' );
+	define( 'FLOATING_CART_FOR_WOOCOMMERCE_TEMPLATE_PATH', untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/templates/' );
 
 	/**
 	 * Floating Cart for WooCommerce class
