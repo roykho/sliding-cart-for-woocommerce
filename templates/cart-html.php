@@ -13,14 +13,17 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div class="floating-cart-for-woocommerce-wrapper">
+<div id="floating-cart-for-woocommerce-wrapper">
 	<input type="hidden" id="floating-cart-for-woocommerce-autohide-duration" value="<?php echo esc_attr( $autohide_duration ); ?>" />
 
-	<?php if ( ! WC()->cart->is_empty() ) : ?>
+	<div id="floating-cart-for-woocommerce-center">
+		<i class="floating-cart-for-woocommerce-cart-tab dashicons <?php echo esc_attr( apply_filters( 'floating_cart_for_woocommerce_cart_tab_icon', 'dashicons-store' ) ); ?>"></i>
 
-	<ul class="woocommerce-mini-cart cart_list product_list_widget">
-		<?php
-		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		<?php if ( ! WC()->cart->is_empty() ) : ?>
+
+		<ul class="woocommerce-mini-cart cart_list product_list_widget">
+			<?php
+			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
@@ -57,12 +60,13 @@ defined( 'ABSPATH' ) || exit;
 					</li>
 					<?php
 				}
-		}
-		?>
-	</ul>
-	<?php else : ?>
-		<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'No products in the cart.', 'floating-cart-for-woocommerce' ); ?></p>
-	<?php endif; ?>
+			}
+			?>
+		</ul>
+		<?php else : ?>
+			<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'No products in the cart.', 'floating-cart-for-woocommerce' ); ?></p>
+		<?php endif; ?>
+	</div>
 </div>
 
 <?php do_action( 'floating_cart_for_woocommerce_after_cart' ); ?>

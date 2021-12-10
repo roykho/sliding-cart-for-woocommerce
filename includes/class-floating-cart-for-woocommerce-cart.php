@@ -51,12 +51,11 @@ class Floating_Cart_For_WooCommerce_Cart {
 
 		// set the localized variables
 		$localized_vars = array(
-			'ajaxurl'                              => admin_url( 'admin-ajax.php' ),
-			'wc_drop_shop_ajax_add_to_cart_nonce'  => wp_create_nonce( 'wc_drop_shop_ajax_add_to_cart_nonce' ),
-			'wc_drop_shop_ajax_refresh_cart_nonce' => wp_create_nonce( 'wc_drop_shop_ajax_refresh_cart_nonce' ),
-			'wc_drop_shop_ajax_remove_item_nonce'  => wp_create_nonce( 'wc_drop_shop_ajax_remove_item_nonce' ),
-			'select_all_options_msg'               => apply_filters( 'woocommerce_drop_shop_select_all_options_msg', __( 'Please select all options before clicking on add to cart.', 'woocommerce-drop-shop' ) ),
-			'is_single'                            => is_product() ? 'true' : 'false'
+			'ajaxurl'                                               => admin_url( 'admin-ajax.php' ),
+			'floating_cart_for_woocommerce_ajax_add_to_cart_nonce'  => wp_create_nonce( 'floating_cart_for_woocommerce_ajax_add_to_cart_nonce' ),
+			'floating_cart_for_woocommerce_ajax_refresh_cart_nonce' => wp_create_nonce( 'floating_cart_for_woocommerce_ajax_refresh_cart_nonce' ),
+			'floating_cart_for_woocommerce_ajax_remove_item_nonce'  => wp_create_nonce( 'floating_cart_for_woocommerce_ajax_remove_item_nonce' ),
+			'is_single'                                             => is_product() ? 'true' : 'false',
 		);
 
 		wp_localize_script( 'floating-cart-for-woocommerce-scripts', 'floating_cart_for_woocommerce_local', $localized_vars );
@@ -118,7 +117,7 @@ class Floating_Cart_For_WooCommerce_Cart {
 
 			// if image is found
 			if ( $image ) {
-			  $image = $image[0];
+				$image = $image[0];
 			} else {
 				// get the product image
 				$attach_id = get_post_meta( $product_id, '_thumbnail_id', true );

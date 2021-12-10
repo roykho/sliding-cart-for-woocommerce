@@ -1,0 +1,28 @@
+{
+  "name": "floating-cart-for-woocommerce",
+  "version": "1.0.0",
+  "description": "Adds a floating cart to your shop.",
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roykho/floating-cart-for-woocommerce.git"
+  },
+  "keywords": [
+    "cart",
+    "floating",
+    "ecommmerce",
+    "woocommerce"
+  ],
+  "author": "roykho",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/roykho/floating-cart-for-woocommerce/issues"
+  },
+  "homepage": "https://github.com/roykho/floating-cart-for-woocommerce#readme"
+}
