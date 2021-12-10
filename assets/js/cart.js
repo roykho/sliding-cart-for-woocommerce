@@ -14,7 +14,7 @@ var floatingCartForWooCommerce = {
 
 		function setAutoHide() {
 			if ( 0 < parseInt( autoHideDuration, 10 ) ) {
-				var time = autoHideDuration * 1000;
+				var time = autoHideDuration * 999999;//1000;
 
 				window.clearTimeout( autoHideTimer );
 			
