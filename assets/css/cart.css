@@ -48,10 +48,10 @@
 	color:#333;
 }
 
-.floating-cart-for-woocommerce-cart-tab.hide {
-	bottom: -130px;
+#floating-cart-for-woocommerce-wrapper.hide {
+	bottom: -140px;
 }
 
-.floating-cart-for-woocommerce-cart-tab.show {
+#floating-cart-for-woocommerce-wrapper.show {
 	bottom: 0;
 }
