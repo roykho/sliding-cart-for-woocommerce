@@ -47,7 +47,7 @@ class Floating_Cart_For_WooCommerce_Cart {
 	public function load_scripts() {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_script( 'floating-cart-for-woocommerce-glide', plugins_url( 'vendor/glide/glide.min.js', dirname( __FILE__ ) ), null, '3.5.2', true );
+		wp_enqueue_script( 'floating-cart-for-woocommerce-glide-scripts', plugins_url( 'vendor/glide/glide.min.js', dirname( __FILE__ ) ), null, '3.5.2', true );
 		wp_enqueue_script( 'floating-cart-for-woocommerce-scripts', plugins_url( 'assets/js/cart' . $suffix . '.js', dirname( __FILE__ ) ), null, FLOATING_CART_FOR_WOOCOMMERCE_VERSION, true );  
 
 		// set the localized variables
@@ -61,6 +61,7 @@ class Floating_Cart_For_WooCommerce_Cart {
 
 		wp_localize_script( 'floating-cart-for-woocommerce-scripts', 'floating_cart_for_woocommerce_local', $localized_vars );
 
+		wp_enqueue_style( 'floating-cart-for-woocommerce-glide-styles', plugins_url( 'vendor/glide/css/glide.core.min.css', dirname( __FILE__ ) ), null, '3.5.2' );
 		wp_enqueue_style( 'floating-cart-for-woocommerce-styles', plugins_url( 'assets/css/cart.css', dirname( __FILE__ ) ), array( 'dashicons' ), FLOATING_CART_FOR_WOOCOMMERCE_VERSION );
 	}
 
