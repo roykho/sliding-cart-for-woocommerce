@@ -2,7 +2,7 @@
 Contributors: royho
 Tags: woocommerce, products, cart, floating cart, roy ho
 WordPress requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 WooCommerce requires at least: 5.0
 Stable tag: 1.0.0
 Author URI: http://royho.me
