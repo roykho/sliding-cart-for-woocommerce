@@ -1,0 +1,44 @@
+{
+	"name": "floating-cart-for-woocommerce",
+	"title": "Floating Cart for WooCommerce",
+	"description": "Adds a floating cart to your shop.",
+	"version": "1.0.0",
+	"homepage": "https://github.com/roykho/floating-cart-for-woocommerce",
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/royho/floating-cart-for-woocommerce.git"
+	},
+	"devDependencies": {
+		"node-wp-i18n": "^1.2.6",
+		"sass": "^1.49.9",
+		"uglify-js": "^3.6.0"
+	},
+	"assets": {
+		"js": {
+			"min": "assets/js/*.min.js",
+			"js": "assets/js/*.js"
+		},
+		"styles": {
+			"css": "assets/css/*.css",
+			"sass": "assets/css/*.scss",
+			"cssfolder": "assets/css/"
+		}
+	},
+	"scripts": {
+		"build": "npm run uglify && npm run makepot && npm run sass",
+		"build-zip": "npm run build && npm run -s archive",
+		"archive": "composer archive --file=$npm_package_name --format=zip",
+		"preuglify": "rm -f assets/js/*.min.js",
+		"uglify": "for f in assets/js/*.js; do file=${f%.js}; node_modules/.bin/uglifyjs $f -c -m > $file.min.js; done",
+		"presass": "rm -f $npm_package_assets_styles_css",
+		"sass": "sass assets/css:assets/css --style compressed --no-source-map",
+		"watchsass": "sass assets/css:assets/css --style compressed --watch",
+		"postsass": "for f in $npm_package_assets_styles_css; do file=${f%.css}; node_modules/.bin/cleancss -o $file.css $f; done",
+		"makepot": "wpi18n addtextdomain $npm_package_name; wpi18n makepot --domain-path languages --pot-file $npm_package_name.pot --type plugin --main-file $npm_package_name.php --exclude node_modules,tests,docs,vendor"
+	},
+	"engines": {
+		"node": "^16.13.2",
+		"npm": "^8.1.2"
+	}
+}

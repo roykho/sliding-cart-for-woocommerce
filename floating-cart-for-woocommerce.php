@@ -8,7 +8,7 @@
  * Author URI: http://royho.me
  * Text Domain: floating-cart-for-woocommerce
  * Domain Path: /languages
- * Copyright: (c) 2021 Roy Ho
+ * Copyright: (c) 2022 Roy Ho
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -55,10 +55,9 @@ if ( ! class_exists( 'Floating_Cart_For_Woocommerce' ) ) :
 		public function includes() {
 			if ( is_admin() ) {
 				require_once FLOATING_CART_FOR_WOOCOMMERCE_ABSPATH . 'includes/class-floating-cart-for-woocommerce-admin.php';
-			} else {
-				require_once FLOATING_CART_FOR_WOOCOMMERCE_ABSPATH . 'includes/class-floating-cart-for-woocommerce-cart.php';
-				require_once FLOATING_CART_FOR_WOOCOMMERCE_ABSPATH . 'includes/class-floating-cart-for-woocommerce-cart-ajax.php';
 			}
+
+			require_once FLOATING_CART_FOR_WOOCOMMERCE_ABSPATH . 'includes/class-floating-cart-for-woocommerce-cart.php';
 		}
 
 		/**

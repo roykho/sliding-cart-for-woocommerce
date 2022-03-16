@@ -1,0 +1,32 @@
+{
+	"name": "roykho/floating-cart-for-woocommerce",
+	"description": "Adds a floating cart to your shop.",
+	"homepage": "http://github.com/roykho/floating-cart-for-woocommerce/",
+	"license": "GPL-3.0",
+	"archive": {
+		"exclude": [
+			"!/assets",
+			"!/languages",
+			"assets/**/*.scss",
+			".wordpress-org",
+			"node_modules",
+			"composer.json",
+			"composer.lock",
+			"package.json",
+			"package-lock.json",
+			"phpcs.xml",
+			"phpunit.xml",
+			"vendor",
+			"floating-cart-for-woocommerce.zip",
+			".*"
+		]
+	},
+	"require-dev": {
+		"woocommerce/woocommerce-sniffs": "^0.1.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": false
+		}
+	}
+}
