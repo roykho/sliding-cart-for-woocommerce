@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 										'woocommerce_cart_item_remove_link',
 										sprintf(
-											'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+											'<a href="%s" class="remove remove_from_cart_button dashicons dashicons-dismiss" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 											esc_attr__( 'Remove this item', 'floating-cart-for-woocommerce' ),
 											esc_attr( $product_id ),

@@ -33,7 +33,7 @@
 		"uglify": "for f in assets/js/*.js; do file=${f%.js}; node_modules/.bin/uglifyjs $f -c -m > $file.min.js; done",
 		"presass": "rm -f $npm_package_assets_styles_css",
 		"sass": "sass assets/css:assets/css --style compressed --no-source-map",
-		"watchsass": "sass assets/css:assets/css --style compressed --watch",
+		"watchsass": "sass assets/css:assets/css --style compressed --watch  --no-source-map",
 		"postsass": "for f in $npm_package_assets_styles_css; do file=${f%.css}; node_modules/.bin/cleancss -o $file.css $f; done",
 		"makepot": "wpi18n addtextdomain $npm_package_name; wpi18n makepot --domain-path languages --pot-file $npm_package_name.pot --type plugin --main-file $npm_package_name.php --exclude node_modules,tests,docs,vendor"
 	},
