@@ -1,6 +1,6 @@
 node_modules/
 vendor/
 languages/
-*.css
-*.min.js
+assets/css/*.css
+assets/js/*.min.js
 *.zip
