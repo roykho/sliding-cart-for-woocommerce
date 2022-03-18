@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Adds a floating cart to your shop.
 
-There is no active support for this plugin here.  Please go here to contribute https://github.com/roykho/floating-cart-for-woocommerce
+Found a bug? Want to report it? Please go here to contribute https://github.com/roykho/floating-cart-for-woocommerce
 
 == Installation ==
 
