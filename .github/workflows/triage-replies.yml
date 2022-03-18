@@ -1,0 +1,41 @@
+name: Add issue triage comments.
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  add-votes-comment:
+    if: "github.event.label.name == 'needs: votes'"
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add votes needed comment
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.WC_BOT_TRIAGE_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Thanks for the suggestion @${{ github.event.issue.user.login }},\n\n\
+              While we appreciate you sharing your ideas with us, it doesn’t fit in with our current priorities for the project.\n\
+              At some point, we may revisit our priorities and look through the list of suggestions like this one to see if it \
+              warrants a second look.\n\n\
+              In the meantime, we are going to close this issue with the `votes needed` label and evaluate over time if this \
+              issue collects more feedback.\n\n\
+              Don’t be alarmed if you don’t see any activity on this issue for a while. \
+              We'll keep an eye on the popularity of this request.'
+            })
+      - name: Close votes needed issue
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.WC_BOT_TRIAGE_TOKEN }}
+          script: |
+            github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  state: 'closed'
+                })
