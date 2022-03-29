@@ -2,19 +2,19 @@
 /**
  * The template for displaying the cart contents.
  *
- * This template can be overridden by copying it to yourtheme/floating-cart-for-woocommerce/cart-html.php
+ * This template can be overridden by copying it to yourtheme/sliding-cart-for-woocommerce/cart-html.php
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package Floating-Cart-For-Woocommerce\Templates
+ * @package Sliding-Cart-For-Woocommerce\Templates
  * @version 1.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 ?>
-		 <div id="floating-cart-for-woocommerce-inner">
-			<div id="floating-cart-for-woocommerce-glide" class="glide">
-				<div id="floating-cart-for-woocommerce-glide-track" data-glide-el="track" class="glide__track">
+		 <div id="sliding-cart-for-woocommerce-inner">
+			<div id="sliding-cart-for-woocommerce-glide" class="glide">
+				<div id="sliding-cart-for-woocommerce-glide-track" data-glide-el="track" class="glide__track">
 					<ul class="woocommerce-mini-cart cart_list product_list_widget glide__slides">
 						<?php
 						foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 										sprintf(
 											'<a href="%s" class="remove remove_from_cart_button dashicons dashicons-dismiss" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"></a>',
 											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-											esc_attr__( 'Remove this item', 'floating-cart-for-woocommerce' ),
+											esc_attr__( 'Remove this item', 'sliding-cart-for-woocommerce' ),
 											esc_attr( $product_id ),
 											esc_attr( $cart_item_key ),
 											esc_attr( $_product->get_sku() )
@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 									<?php if ( empty( $product_permalink ) ) : ?>
 										<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 									<?php else : ?>
-										<a href="<?php echo esc_url( $product_permalink ); ?>" class="floating-cart-for-woocommerce-image-link">
+										<a href="<?php echo esc_url( $product_permalink ); ?>" class="sliding-cart-for-woocommerce-image-link">
 											<?php echo $thumbnail . wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 										</a>
 									<?php endif; ?>
@@ -58,13 +58,13 @@ defined( 'ABSPATH' ) || exit;
 						?>
 					</ul>
 					<div class="glide__arrows" data-glide-el="controls">
-						<button class="glide__arrow glide__arrow--left dashicons dashicons-arrow-left-alt2" data-glide-dir="<" title="<?php esc_attr_e( 'prev', 'floating-cart-for-woocommerce' ); ?>"></button>
-						<button class="glide__arrow glide__arrow--right dashicons dashicons-arrow-right-alt2" data-glide-dir=">" title="<?php esc_attr_e( 'next', 'floating-cart-for-woocommerce' ); ?>"></button>
+						<button class="glide__arrow glide__arrow--left dashicons dashicons-arrow-left-alt2" data-glide-dir="<" title="<?php esc_attr_e( 'prev', 'sliding-cart-for-woocommerce' ); ?>"></button>
+						<button class="glide__arrow glide__arrow--right dashicons dashicons-arrow-right-alt2" data-glide-dir=">" title="<?php esc_attr_e( 'next', 'sliding-cart-for-woocommerce' ); ?>"></button>
 					</div>
 				</div>
 			</div>
 
-			<div class="floating-cart-for-woocommerce-checkout">
+			<div class="sliding-cart-for-woocommerce-checkout">
 				<p class="woocommerce-mini-cart__total total">
 					<?php
 					/**

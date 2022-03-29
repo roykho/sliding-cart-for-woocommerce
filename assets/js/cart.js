@@ -5,11 +5,11 @@ jQuery( document ).ready( function( $ ) {
 		glide,
 		isMobile;
 
-	$.floatingCartForWooCommerce = {
+	$.slidingCartForWooCommerce = {
 		init: function() {
-			cart       = $( '#floating-cart-for-woocommerce-wrapper' );
-			glideTrack = $( '#floating-cart-for-woocommerce-glide-track' );
-			isMobile   = floating_cart_for_woocommerce_local.isMobile;
+			cart       = $( '#sliding-cart-for-woocommerce-wrapper' );
+			glideTrack = $( '#sliding-cart-for-woocommerce-glide-track' );
+			isMobile   = sliding_cart_for_woocommerce_local.isMobile;
 
 			if ( glideTrack.length ) {
 				glide = new Glide( '.glide', {
@@ -41,7 +41,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			if ( isMobile ) {
-				$( document ).on( 'click', '.floating-cart-for-woocommerce-cart-tab', function() {
+				$( document ).on( 'click', '.sliding-cart-for-woocommerce-cart-tab', function() {
 					if ( ! cart.hasClass( 'show' ) ) {
 						cart.addClass( 'show' );
 					} else {
@@ -49,7 +49,7 @@ jQuery( document ).ready( function( $ ) {
 					}
 				} );
 			} else {
-				$( document ).on( 'mouseover', '.floating-cart-for-woocommerce-cart-tab', function() {
+				$( document ).on( 'mouseover', '.sliding-cart-for-woocommerce-cart-tab', function() {
 					if ( ! cart.hasClass( 'show' ) ) {
 						cart.addClass( 'show' );
 					}
@@ -63,19 +63,19 @@ jQuery( document ).ready( function( $ ) {
 		refresh_cart: function () {
 			$( document ).on( 'added_to_cart removed_from_cart', function( e ) {
 				var data = {
-					action: 'floating_cart_for_woocommerce_refresh',
-					floating_cart_for_woocommerce_ajax_refresh_cart_nonce: floating_cart_for_woocommerce_local.floating_cart_for_woocommerce_ajax_refresh_cart_nonce
+					action: 'sliding_cart_for_woocommerce_refresh',
+					sliding_cart_for_woocommerce_ajax_refresh_cart_nonce: sliding_cart_for_woocommerce_local.sliding_cart_for_woocommerce_ajax_refresh_cart_nonce
 				},
-				cart = $( '#floating-cart-for-woocommerce-wrapper' );
+				cart = $( '#sliding-cart-for-woocommerce-wrapper' );
 
-				$.post( floating_cart_for_woocommerce_local.ajaxurl, data, function( response ) {
-					if ( 'added_to_cart' === e.type && ! $( '#floating-cart-for-woocommerce-inner' ).length ) {
-						$( '#floating-cart-for-woocommerce-center p.woocommerce-mini-cart__empty-message' ).replaceWith( response.cart_output );
+				$.post( sliding_cart_for_woocommerce_local.ajaxurl, data, function( response ) {
+					if ( 'added_to_cart' === e.type && ! $( '#sliding-cart-for-woocommerce-inner' ).length ) {
+						$( '#sliding-cart-for-woocommerce-center p.woocommerce-mini-cart__empty-message' ).replaceWith( response.cart_output );
 					} else {
-						$( '#floating-cart-for-woocommerce-inner', cart ).replaceWith( response.cart_output );
+						$( '#sliding-cart-for-woocommerce-inner', cart ).replaceWith( response.cart_output );
 					}
 
-					$.floatingCartForWooCommerce.init();
+					$.slidingCartForWooCommerce.init();
 					glide.update( { startAt: parseInt( response.item_count, 10 ) - 1 } );
 
 					// Show the cart when add to cart is clicked if hidden.
@@ -87,6 +87,6 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
-	$.floatingCartForWooCommerce.init();
-	$.floatingCartForWooCommerce.refresh_cart();
+	$.slidingCartForWooCommerce.init();
+	$.slidingCartForWooCommerce.refresh_cart();
 } );

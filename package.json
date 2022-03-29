@@ -1,13 +1,13 @@
 {
-	"name": "floating-cart-for-woocommerce",
-	"title": "Floating Cart for WooCommerce",
-	"description": "Adds a floating cart to your shop.",
+	"name": "sliding-cart-for-woocommerce",
+	"title": "Sliding Cart for WooCommerce",
+	"description": "Adds a sliding cart to your shop.",
 	"version": "1.0.0",
-	"homepage": "https://github.com/roykho/floating-cart-for-woocommerce",
+	"homepage": "https://github.com/roykho/sliding-cart-for-woocommerce",
 	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/royho/floating-cart-for-woocommerce.git"
+		"url": "git://github.com/royho/sliding-cart-for-woocommerce.git"
 	},
 	"devDependencies": {
 		"node-wp-i18n": "^1.2.6",

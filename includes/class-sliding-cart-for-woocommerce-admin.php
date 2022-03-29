@@ -2,7 +2,7 @@
 /**
  * Admin class
  *
- * @package Floating_Cart_For_Woocommerce_Admin
+ * @package Sliding_Cart_For_Woocommerce_Admin
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class Floating_Cart_For_Woocommerce_Admin {
+class Sliding_Cart_For_Woocommerce_Admin {
 	/**
 	 * Reference ID of the admin.
 	 *
@@ -36,8 +36,8 @@ class Floating_Cart_For_Woocommerce_Admin {
 	 * @return void
 	 */
 	public function __construct() {
-		$this->id    = 'floating_cart_for_woocommerce';
-		$this->label = __( 'Floating Cart for WooCommerce', 'floating-cart-for-woocommerce' );
+		$this->id    = 'sliding_cart_for_woocommerce';
+		$this->label = __( 'Sliding Cart for WooCommerce', 'sliding-cart-for-woocommerce' );
 
 		add_filter( 'woocommerce_products_general_settings', array( $this, 'add_settings' ), 10, 2 );
 	}
@@ -64,18 +64,18 @@ class Floating_Cart_For_Woocommerce_Admin {
 	 */
 	public function add_settings( $settings ) {
 		$settings = array_merge( $settings, apply_filters(
-			'floating_cart_for_woocommerce_settings',
+			'sliding_cart_for_woocommerce_settings',
 			array(
 				array(
-					'title' => __( 'Floating Cart Settings', 'floating-cart-for-woocommerce' ),
+					'title' => __( 'Sliding Cart Settings', 'sliding-cart-for-woocommerce' ),
 					'type'  => 'title',
 					'desc'  => '',
 					'id'    => $this->id . '_options',
 				),
 
 				array(
-					'title'   => __( 'Show only on Shop Pages', 'floating-cart-for-woocommerce' ),
-					'desc'    => __( 'Enable to only show the floating cart on shop pages.', 'floating-cart-for-woocommerce' ),
+					'title'   => __( 'Show only on Shop Pages', 'sliding-cart-for-woocommerce' ),
+					'desc'    => __( 'Enable to only show the sliding cart on shop pages.', 'sliding-cart-for-woocommerce' ),
 					'id'      => $this->id . '_show_on_shop',
 					'default' => 'no',
 					'type'    => 'checkbox',
@@ -93,4 +93,4 @@ class Floating_Cart_For_Woocommerce_Admin {
 	}
 }
 
-new Floating_Cart_For_Woocommerce_Admin();
+new Sliding_Cart_For_Woocommerce_Admin();

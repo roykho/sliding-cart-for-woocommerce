@@ -1,1 +1,1 @@
-# floating-cart-for-woocommerce
+# sliding-cart-for-woocommerce
