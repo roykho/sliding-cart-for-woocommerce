@@ -25,5 +25,6 @@ Found a bug? Want to report it? Please go here to contribute https://github.com/
 
 == Changelog ==
 
-= 1.0.0 - xx-xx-xx =
-* Release
+= 1.0.0 - 2022-03-30 =
+
+* Initial release.
